@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+version = ARGV.shift
+old_version = `cat .version`.chomp
+
+abort("\n== version is blank ==") unless version
+abort("\n== old_version is blank ==") unless old_version
+
+puts "== Release #{version} from #{old_version} =="
+system "sed -ie 's/#{old_version}/#{version}/g' Dockerfile"
+system "echo #{version} > .version"
+system 'git add .'
+system "git commit -m 'Bump to #{version}'"
+system "git tag #{version} -m '#{version}'"
+# system 'git push'
+# system 'git push ---tags'
+
+puts "\n== Released =="
