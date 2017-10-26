@@ -1,10 +1,11 @@
 # NAME:    skylark/elasticsearch
-# VERSION: 5.6.3-alpine
-FROM elasticsearch:5.6.3-alpine
+
+ARG VERSION=5.6.3
+FROM elasticsearch:${VERSION}-alpine
 
 MAINTAINER Phil Chen '06fahchen@gmail.com'
 
-ADD https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.6.3/elasticsearch-analysis-ik-5.6.3.zip /tmp/
-RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///tmp/elasticsearch-analysis-ik-5.6.3.zip
+ADD https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v$VERSION/elasticsearch-analysis-ik-$VERSION.zip /tmp/
+RUN /usr/share/elasticsearch/bin/elasticsearch-plugin install file:///tmp/elasticsearch-analysis-ik-$VERSION.zip
 
 RUN rm -rf /tm/*
