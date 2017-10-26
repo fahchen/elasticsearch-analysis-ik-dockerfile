@@ -7,7 +7,7 @@ abort("\n== version is blank ==") unless version
 abort("\n== old_version is blank ==") unless old_version
 
 puts "== Release #{version} from #{old_version} =="
-system "sed -i '' 's/VERSION=#{old_version}/VERSION=#{version}/g' Dockerfile"
+system "sed -i '' 's/#{old_version}/#{version}/g' Dockerfile"
 system "echo #{version} > .version"
 system 'git add .'
 system "git commit -m 'Bump to #{version}'"
