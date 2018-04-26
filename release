@@ -9,7 +9,7 @@ def release(version)
   puts "== Release #{version} from #{old_version} =="
   system "sed -i '' 's/#{old_version}/#{version}/g' Dockerfile"
   system "echo #{version} > .version"
-  system 'git add .'
+  system 'git add Dockerfile'
   system "git commit -m 'Bump to #{version}'"
   system "git tag #{version} -m '#{version}'"
   puts "\n== Released =="
