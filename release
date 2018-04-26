@@ -13,6 +13,6 @@ system 'git add .'
 system "git commit -m 'Bump to #{version}'"
 system "git tag #{version} -m '#{version}'"
 system 'git push'
-system 'git push ---tags'
+system 'git push --tags'
 
 puts "\n== Released =="
