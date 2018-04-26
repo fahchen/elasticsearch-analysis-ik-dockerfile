@@ -12,7 +12,7 @@ def release(version)
   system 'git add Dockerfile'
   system "git commit -m 'Bump to #{version}'"
   system "git tag #{version} -m '#{version}'"
-  puts "\n== Released =="
+  puts "\n== Released ==\n"
 end
 
 while version = ARGV.shift
