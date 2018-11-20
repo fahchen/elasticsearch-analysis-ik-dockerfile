@@ -1,6 +1,6 @@
 # NAME: fahchen/elasticsearch-analysis-ik
 
-FROM elasticsearch:6.4.3-alpine
+FROM elasticsearch:6.4.3
 
 MAINTAINER Phil Chen '06fahchen@gmail.com'
 
