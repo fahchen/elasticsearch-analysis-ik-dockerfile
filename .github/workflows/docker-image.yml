@@ -31,7 +31,7 @@ jobs:
         context: .
         push: true
         tags: |
-          elasticsearch-analysis-ik:${{ steps.get-version.outputs.VERSION }}
-          elasticsearch-analysis-ik:latest
+          fahchen/elasticsearch-analysis-ik:${{ steps.get-version.outputs.VERSION }}
+          fahchen/elasticsearch-analysis-ik:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
